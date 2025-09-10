@@ -89,10 +89,3 @@ canvas{image-rendering:crisp-edges}
 .msg.err{color:#ff5d7a}
 
 @media (max-width:920px){ .cols{grid-template-columns:1fr;} #profileWrap{grid-template-columns:1fr;} }
-/* 強制個人資料頁兩顆按鈕使用小尺寸 */
-#viewSettings #btnApplyTop,
-#viewSettings #btnResetTop{
-  padding:4px 8px;
-  font-size:11px;
-  border-radius:6px;
-}
