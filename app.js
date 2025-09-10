@@ -324,7 +324,7 @@ function drawRadar(){
 
   // 中心點向左移一些，讓整張雷達圖更靠近畫布中線左側
   const cx=w/2 - 14, cy=h/2 + 10;
-  const R=Math.min(w,h)/2 - 32;
+  const R=100;
   const N=gradeSkillsKeys.length;
   const values=gradeSkillsKeys.map(k=> Math.min(1,(DB.skills[k]?.lvl||1)/5));
 
