@@ -303,7 +303,7 @@ function handleLogin(){ const last = new Date(DB.login.last||0); const now=new D
 // ===== Settings on Profile page (only input fields) =====
 function renderSettings(){ inputName.value=DB.me.name||''; selectRank.value=DB.me.cls||'五年級'; const metaS=document.getElementById('metaSettings'); metaS.innerHTML=''; [[t('coins'),DB.me.coins],[t('cards'),DB.cards.refresh],[t('loginStreak'),DB.login.streak]].forEach(([k,v])=>{ const d=document.createElement('div'); d.className='chip'; d.textContent=`${k}: ${v}`; metaS.appendChild(d) }); }
 
-// === Apply/Reset moved to Dashboard header ===
+// === Apply/Reset moved to Profile page (buttons' IDs unchanged) ===
 btnApplyTop.onclick=()=>{
   DB.me.name=(inputName.value||'').trim(); const old=DB.me.cls; DB.me.cls=selectRank.value; if(DB.me.cls!==old){ addNotif(DB.lang==='zh'?`切換年級：${DB.me.cls}`:`Grade -> ${DB.me.cls}`) }
   save(); updateAll(); alert(t('applied'));
@@ -316,8 +316,55 @@ btnApplyAvatar && (btnApplyAvatar.onclick=()=>{ if(DB.me.avatarImg){ addNotif(DB
 btnClearAvatar && (btnClearAvatar.onclick=()=>{ DB.me.avatarImg=null; save(); applyAvatar(); addNotif(DB.lang==='zh'?'已移除自訂圖片':'Custom image removed'); });
 function applyAvatar(){ if(DB.me.avatarImg){ avatarImg.src = DB.me.avatarImg; avatarImg.classList.remove('hidden'); avatarSVG.classList.add('hidden'); } else { avatarImg.src=''; avatarImg.classList.add('hidden'); avatarSVG.classList.remove('hidden'); } }
 
-// ===== Radar Chart (shifted slightly right) =====
-function drawRadar(){ const c = radarCanvas; if(!c) return; const ctx=c.getContext('2d'); const w=c.width, h=c.height; ctx.clearRect(0,0,w,h); const cx=w/2+18, cy=h/2+10; const R=Math.min(w,h)/2-32; const N=gradeSkillsKeys.length; const values=gradeSkillsKeys.map(k=> Math.min(1,(DB.skills[k]?.lvl||1)/5)); ctx.strokeStyle='#62c8ff55'; ctx.fillStyle='#62c8ff16'; ctx.lineWidth=1; for(let ring=1; ring<=4; ring++){ const r=R*ring/4; ctx.beginPath(); for(let i=0;i<N;i++){ const ang=-Math.PI/2 + i*2*Math.PI/N; const x=cx+r*Math.cos(ang), y=cy+r*Math.sin(ang); if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y); } ctx.closePath(); ctx.stroke(); } ctx.fillStyle='#d6f8ff'; ctx.font='12px "Share Tech Mono", monospace'; ctx.textAlign='center'; gradeSkillsKeys.forEach((k,i)=>{ const ang=-Math.PI/2 + i*2*Math.PI/N; const x=cx+R*Math.cos(ang), y=cy+R*Math.sin(ang); ctx.strokeStyle='#62c8ff44'; ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(x,y); ctx.stroke(); const label=getText(SKILL_NAMES[k]); ctx.fillText(label, cx+(R+14)*Math.cos(ang), cy+(R+14)*Math.sin(ang)); }); ctx.beginPath(); values.forEach((v,i)=>{ const ang=-Math.PI/2 + i*2*Math.PI/N; const r=R*v; const x=cx+r*Math.cos(ang), y=cy+r*Math.sin(ang); if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y); }); ctx.closePath(); ctx.fillStyle='#62c8ff33'; ctx.fill(); ctx.strokeStyle='#62c8ffcc'; ctx.stroke(); }
+// ===== Radar Chart (shifted left; labels pushed outward) =====
+function drawRadar(){
+  const c = radarCanvas; if(!c) return;
+  const ctx=c.getContext('2d'); const w=c.width, h=c.height;
+  ctx.clearRect(0,0,w,h);
+
+  // 中心點向左移一些，讓整張雷達圖更靠近畫布中線左側
+  const cx=w/2 - 14, cy=h/2 + 10;
+  const R=Math.min(w,h)/2 - 32;
+  const N=gradeSkillsKeys.length;
+  const values=gradeSkillsKeys.map(k=> Math.min(1,(DB.skills[k]?.lvl||1)/5));
+
+  // rings
+  ctx.strokeStyle='#62c8ff55'; ctx.fillStyle='#62c8ff16'; ctx.lineWidth=1;
+  for(let ring=1; ring<=4; ring++){
+    const r=R*ring/4; ctx.beginPath();
+    for(let i=0;i<N;i++){
+      const ang=-Math.PI/2 + i*2*Math.PI/N;
+      const x=cx+r*Math.cos(ang), y=cy+r*Math.sin(ang);
+      if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    }
+    ctx.closePath(); ctx.stroke();
+  }
+
+  // spokes + labels（把標籤半徑外推到 R+26，避免碰到雷達圖）
+  ctx.fillStyle='#d6f8ff';
+  ctx.font='12px "Share Tech Mono", monospace';
+  ctx.textAlign='center';
+  gradeSkillsKeys.forEach((k,i)=>{
+    const ang=-Math.PI/2 + i*2*Math.PI/N;
+    const x=cx+R*Math.cos(ang), y=cy+R*Math.sin(ang);
+    ctx.strokeStyle='#62c8ff44';
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(x,y); ctx.stroke();
+    const label=getText(SKILL_NAMES[k]);
+    const lx = cx+(R+26)*Math.cos(ang), ly = cy+(R+26)*Math.sin(ang);
+    ctx.fillText(label, lx, ly);
+  });
+
+  // shape
+  ctx.beginPath();
+  values.forEach((v,i)=>{
+    const ang=-Math.PI/2 + i*2*Math.PI/N; const r=R*v;
+    const x=cx+r*Math.cos(ang), y=cy+r*Math.sin(ang);
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  });
+  ctx.closePath();
+  ctx.fillStyle='#62c8ff33'; ctx.fill();
+  ctx.strokeStyle='#62c8ffcc'; ctx.stroke();
+}
 
 // ===== Init =====
 function ensureInitial(){ ensureSkills(); if(DB.tasks.length===0) genDaily(); if(DB.side.length===0) genSide(); handleLogin(); applyAvatar(); }
