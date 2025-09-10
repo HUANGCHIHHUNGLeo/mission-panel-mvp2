@@ -1,7 +1,7 @@
 :root{ --bg:#0a0f14; --white:#eaffff; --neon:#62c8ff; --deep:#0b1b28; --deep2:#0e2433; --grid:#62c8ff33; --gold:#e6d28a; --goldGlow:0 0 8px rgba(230,210,138,.55);}  
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;background:radial-gradient(1100px 760px at 70% 18%, #0c151c 0%, #0a0f14 60%, #070a0d 100%) fixed;color:var(--white);font-family:"Orbitron","Share Tech Mono",monospace;letter-spacing:.2px;overflow:auto}
+body{margin:0;background:radial-gradient(1100px 760px at 70% 18%, #0c151c 0%, #0a0f14 60%, #070a0d 100%) fixed;color:var(--white);font-family:"Orbitron","Share Tech Mono",monospace;letter-spacing:.2px;overflow:autofont-size: 15px; /* 預設是 13px 左右，這裡改大 */}
 .stage{width:100%;min-height:100vh;padding:8px;display:flex;align-items:stretch;justify-content:stretch}
 .screen{position:relative;width:100%;background:linear-gradient(160deg,var(--deep),var(--deep2));border-radius:14px;box-shadow:0 0 30px rgba(98,200,255,.35) inset,0 0 0 2px #62c8ff33 inset;padding:8px;display:grid;grid-template-rows:auto auto 1fr;gap:8px;overflow:hidden}
 
