@@ -1,0 +1,104 @@
+[
+  {
+    "id": "s1",
+    "title": {
+      "zh": "心算：8-5=？",
+      "en": "8-5=?"
+    },
+    "skill": "calc",
+    "xp": 8,
+    "q": {
+      "type": "fill",
+      "prompt": {
+        "zh": "8 - 5 = _____",
+        "en": "8 - 5 = _____"
+      },
+      "answer": "3"
+    },
+    "explain": {
+      "zh": "8-5=3。",
+      "en": "8-5=3."
+    }
+  },
+  {
+    "id": "s2",
+    "title": {
+      "zh": "選擇：正方形邊數",
+      "en": "Square sides"
+    },
+    "skill": "geom",
+    "xp": 8,
+    "q": {
+      "type": "mc",
+      "prompt": {
+        "zh": "正方形有幾條邊？",
+        "en": "How many sides does a square have?"
+      },
+      "options": [
+        {
+          "zh": "3",
+          "en": "3"
+        },
+        {
+          "zh": "4",
+          "en": "4"
+        },
+        {
+          "zh": "5",
+          "en": "5"
+        },
+        {
+          "zh": "6",
+          "en": "6"
+        }
+      ],
+      "answer": 1
+    },
+    "explain": {
+      "zh": "正方形有4條邊。",
+      "en": "A square has 4 sides."
+    }
+  },
+  {
+    "id": "s3",
+    "title": {
+      "zh": "代數：2x=10，x=？",
+      "en": "2x=10"
+    },
+    "skill": "algebra",
+    "xp": 9,
+    "q": {
+      "type": "fill",
+      "prompt": {
+        "zh": "2x = 10，x = _____",
+        "en": "2x = 10, x = _____"
+      },
+      "answer": "5"
+    },
+    "explain": {
+      "zh": "2x=10 → x=5。",
+      "en": "2x=10 → x=5."
+    }
+  },
+  {
+    "id": "s4",
+    "title": {
+      "zh": "應用：3個盒子每盒2顆",
+      "en": "Boxes"
+    },
+    "skill": "apply",
+    "xp": 9,
+    "q": {
+      "type": "fill",
+      "prompt": {
+        "zh": "3 個盒子每盒 2 顆球，共 _____ 顆",
+        "en": "3 boxes with 2 balls each have _____ balls in total"
+      },
+      "answer": "6"
+    },
+    "explain": {
+      "zh": "2顆/盒×3盒=6顆。",
+      "en": "2 per box × 3 boxes = 6."
+    }
+  }
+]

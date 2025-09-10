@@ -1,0 +1,182 @@
+[
+  {
+    "id": "d1",
+    "title": {
+      "zh": "計算：1+2=？",
+      "en": "Compute 1+2=?"
+    },
+    "skill": "calc",
+    "xp": 10,
+    "q": {
+      "type": "fill",
+      "prompt": {
+        "zh": "1 + 2 = _____",
+        "en": "1 + 2 = _____"
+      },
+      "answer": "3"
+    },
+    "explain": {
+      "zh": "1+2=3。把兩個數相加。",
+      "en": "1+2=3. Simple addition."
+    }
+  },
+  {
+    "id": "d2",
+    "title": {
+      "zh": "選擇：三角形內角和",
+      "en": "Triangle angle sum"
+    },
+    "skill": "geom",
+    "xp": 12,
+    "q": {
+      "type": "mc",
+      "prompt": {
+        "zh": "三角形內角和為多少？",
+        "en": "What is the interior angle sum of a triangle?"
+      },
+      "options": [
+        {
+          "zh": "90°",
+          "en": "90°"
+        },
+        {
+          "zh": "180°",
+          "en": "180°"
+        },
+        {
+          "zh": "270°",
+          "en": "270°"
+        },
+        {
+          "zh": "360°",
+          "en": "360°"
+        }
+      ],
+      "answer": 1
+    },
+    "explain": {
+      "zh": "任意三角形內角和為180°。",
+      "en": "Sum of interior angles of any triangle is 180°."
+    }
+  },
+  {
+    "id": "d3",
+    "title": {
+      "zh": "代數：解 x+5=9",
+      "en": "Solve x+5=9"
+    },
+    "skill": "algebra",
+    "xp": 12,
+    "q": {
+      "type": "fill",
+      "prompt": {
+        "zh": "x + 5 = 9，x = _____",
+        "en": "x + 5 = 9, x = _____"
+      },
+      "answer": "4"
+    },
+    "explain": {
+      "zh": "x+5=9 → x=9-5=4。",
+      "en": "x+5=9 → x=9-5=4."
+    }
+  },
+  {
+    "id": "d4",
+    "title": {
+      "zh": "應用：每人3顆糖，4人共有？",
+      "en": "Word problem"
+    },
+    "skill": "apply",
+    "xp": 14,
+    "q": {
+      "type": "fill",
+      "prompt": {
+        "zh": "每人 3 顆糖，4 人共有 _____ 顆",
+        "en": "Each person has 3 candies. 4 people have _____ candies."
+      },
+      "answer": "12"
+    },
+    "explain": {
+      "zh": "每人3顆×4人=12顆。",
+      "en": "3 per person × 4 people = 12."
+    }
+  },
+  {
+    "id": "d5",
+    "title": {
+      "zh": "選擇：長方形面積",
+      "en": "Rectangle area"
+    },
+    "skill": "geom",
+    "xp": 12,
+    "q": {
+      "type": "mc",
+      "prompt": {
+        "zh": "長方形長4寬3，面積為？",
+        "en": "A rectangle with length 4 and width 3 has area?"
+      },
+      "options": [
+        {
+          "zh": "7",
+          "en": "7"
+        },
+        {
+          "zh": "12",
+          "en": "12"
+        },
+        {
+          "zh": "14",
+          "en": "14"
+        },
+        {
+          "zh": "24",
+          "en": "24"
+        }
+      ],
+      "answer": 1
+    },
+    "explain": {
+      "zh": "長×寬=面積 → 4×3=12。",
+      "en": "Area = length×width → 4×3=12."
+    }
+  },
+  {
+    "id": "d6",
+    "title": {
+      "zh": "比例：10是20的幾分之幾？",
+      "en": "Ratio"
+    },
+    "skill": "apply",
+    "xp": 12,
+    "q": {
+      "type": "mc",
+      "prompt": {
+        "zh": "10 是 20 的幾分之幾？",
+        "en": "10 is what fraction of 20?"
+      },
+      "options": [
+        {
+          "zh": "1/4",
+          "en": "1/4"
+        },
+        {
+          "zh": "1/3",
+          "en": "1/3"
+        },
+        {
+          "zh": "1/2",
+          "en": "1/2"
+        },
+        {
+          "zh": "2/3",
+          "en": "2/3"
+        }
+      ],
+      "answer": 2
+    },
+    "explain": {
+      "zh": "10/20=1/2。約分得到 1/2。",
+      "en": "10/20 reduces to 1/2."
+    }
+  }
+]
