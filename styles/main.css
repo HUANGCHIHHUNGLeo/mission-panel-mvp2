@@ -89,3 +89,50 @@ canvas{image-rendering:crisp-edges}
 .msg.err{color:#ff5d7a}
 
 @media (max-width:920px){ .cols{grid-template-columns:1fr;} #profileWrap{grid-template-columns:1fr;} }
+
+/* === Scale-up: 全站字體與面板視覺微放大（不影響雷達半徑/畫布） === */
+:root{
+  --fs: 14px;      /* 全站基準字體（原本多為 12px）*/
+  --fs-sm: 13px;   /* 小字 */
+  --fs-lg: 16px;   /* 區塊標題 */
+}
+
+/* 基礎字級 */
+body{ font-size: var(--fs); }
+
+/* 常見使用 12px 的元件 → 一起抬到 14px（看起來更清楚） */
+.navBtn,
+.topStats,
+.chip,
+.notifyMini .ttl,
+.notifyMini li,
+.langBtn,
+.meta,
+.xp,
+.stat,
+.btn,
+.field label,
+.msg{
+  font-size: var(--fs);
+}
+
+/* 區塊標題（原 14px）→ 16px */
+.panel h2{ font-size: var(--fs-lg); }
+
+/* 雷達外框的區塊標題（原 13px）→ 跟著基準 */
+.radarPanel h3{ font-size: var(--fs); }
+
+/* 讓「雷達圖的總框框」更有份量：加內距+邊框厚度 */
+.radarPanel{
+  padding: 12px;                 /* 原本 8px → 12px */
+  border-width: 2px;             /* 原設1px → 2px，看起來更有存在感 */
+  box-shadow: 0 0 0 1px #62c8ff33 inset; /* 輕內框，霓虹感更明顯 */
+}
+
+/* 讓整個畫面稍微放大但不擠：主要容器留一點呼吸 */
+.stage{ padding: 12px; }         /* 原 8px → 12px（全局微放大感） */
+
+/* 手機時也維持較大的字體（可選） */
+@media (max-width: 480px){
+  :root{ --fs: 15px; --fs-sm: 14px; --fs-lg: 17px; }
+}
