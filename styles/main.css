@@ -30,8 +30,13 @@ body{margin:0;background:radial-gradient(1100px 760px at 70% 18%, #0c151c 0%, #0
 .meta{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;font-size:12px}
 .meta div{background:#092234;border:1px solid #62c8ff33;border-radius:8px;padding:6px;color:#d6f8ff;display:flex;align-items:center;justify-content:space-between}
 
-.xp{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:6px;font-size:12px}
-.bar{height:8px;background:#0a2a3c;border:1px solid #62c8ff55;border-radius:999px;overflow:hidden;box-shadow:0 0 6px rgba(98,200,255,.2) inset}
+.xp{display:grid;grid-template-columns:140px 1fr 54px;align-items:center;gap:10px;font-size:16px;font-weight: bold;     /* 🚀 加粗 */
+  margin: 12px 0;        /* 🚀 上下留白更明顯 */}
+.xp #lblXP {
+  font-size: 16px;       /* 標籤跟著變大 */
+  font-weight: bold;
+}
+.bar{height:14px;background:#0a2a3c;border:1px solid #62c8ff55;border-radius:999px;overflow:hidden;box-shadow:0 0 6px rgba(98,200,255,.2) inset}
 .bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#bfe5ff,#62c8ff);box-shadow:0 0 6px #62c8ff;transition:width .9s ease-in-out}
 
 .stat{display:grid;grid-template-columns:minmax(160px,auto) 1fr 56px 36px;align-items:center;gap:8px;font-size:12px}
