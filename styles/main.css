@@ -174,22 +174,24 @@ body{ font-size: var(--fs); }
   .cols{ grid-template-columns: 1.3fr .9fr; } /* 左主欄略窄，右欄略寬 */
 }
 
-/* 技能列：左固定欄，右固定欄 */
-.skill{
+/* 技能列 */
+.stat{
   display: grid;
-  grid-template-columns: 150px 1fr 40px; 
-  /* 150px = 名稱框固定寬度（能放下6字+Lv1）
-     1fr = 經驗條
-     40px = 百分比數字 */
+  grid-template-columns: 150px 50px 1fr 40px;
+  /* 150px = 名稱框固定寬度
+     50px  = 等級框（Lv1）
+     1fr   = 經驗條自適應
+     40px  = 百分比數字 */
   align-items: center;
   gap: 8px;
+  font-size: 12px;
   margin-bottom: 8px;
 }
 
-/* 技能名稱框框 */
-.skillName{
+/* 名稱框 */
+.stat .name{
   display: inline-block;
-  width: 100%;                /* 撐滿左側格子 */
+  width: 100%;
   text-align: center;
   padding: 4px 6px;
   border: 1px solid var(--gold);
@@ -197,24 +199,30 @@ body{ font-size: var(--fs); }
   box-sizing: border-box;
 }
 
+/* 等級框 */
+.stat .level{
+  text-align: center;
+  font-weight: bold;
+  color: var(--gold);
+}
+
 /* 經驗條 */
-.xpBar{
-  width: 100%;                /* 撐滿中間格子 */
+.stat .bar{
+  width: 100%;        /* 填滿 grid cell */
   height: 14px;
   background: #233;
   border-radius: 6px;
   overflow: hidden;
 }
-
-/* 經驗條填充 */
-.xpFill{
+.stat .fill{
   height: 100%;
   background: var(--neon);
 }
 
-/* 百分比數字（右側固定欄） */
-.skillPct{
+/* 百分比數字 */
+.stat .pct{
   text-align: right;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--gold);
 }
+
