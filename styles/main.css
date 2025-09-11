@@ -174,36 +174,47 @@ body{ font-size: var(--fs); }
   .cols{ grid-template-columns: 1.3fr .9fr; } /* 左主欄略窄，右欄略寬 */
 }
 
-
-/* 技能列：左邊固定寬度，右邊經驗條對齊 */
+/* 技能列：左固定欄，右固定欄 */
 .skill{
-  display: flex;
+  display: grid;
+  grid-template-columns: 150px 1fr 40px; 
+  /* 150px = 名稱框固定寬度（能放下6字+Lv1）
+     1fr = 經驗條
+     40px = 百分比數字 */
   align-items: center;
-  gap: 8px;  /* 名稱與經驗條間距 */
+  gap: 8px;
   margin-bottom: 8px;
 }
 
 /* 技能名稱框框 */
 .skillName{
-  flex: 0 0 140px;           /* 固定寬度，大約能容納6個中文字 */
-  text-align: center;        /* 文字置中 */
+  display: inline-block;
+  width: 100%;                /* 撐滿左側格子 */
+  text-align: center;
   padding: 4px 6px;
-  border: 1px solid var(--neon);
+  border: 1px solid var(--gold);
   border-radius: 6px;
-  background: rgba(98,200,255,0.05); /* 淡淡背景，可依需求調 */
   box-sizing: border-box;
 }
 
 /* 經驗條 */
 .xpBar{
-  flex: 1;                   /* 經驗條佔滿剩下空間 */
+  width: 100%;                /* 撐滿中間格子 */
   height: 14px;
   background: #233;
   border-radius: 6px;
   overflow: hidden;
 }
 
+/* 經驗條填充 */
 .xpFill{
   height: 100%;
   background: var(--neon);
+}
+
+/* 百分比數字（右側固定欄） */
+.skillPct{
+  text-align: right;
+  font-size: 13px;
+  color: var(--gold);
 }
