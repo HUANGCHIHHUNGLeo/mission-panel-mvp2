@@ -173,3 +173,37 @@ body{ font-size: var(--fs); }
 @media (min-width: 999px){
   .cols{ grid-template-columns: 1.3fr .9fr; } /* 左主欄略窄，右欄略寬 */
 }
+
+
+/* 技能列：左邊固定寬度，右邊經驗條對齊 */
+.skill{
+  display: flex;
+  align-items: center;
+  gap: 8px;  /* 名稱與經驗條間距 */
+  margin-bottom: 8px;
+}
+
+/* 技能名稱框框 */
+.skillName{
+  flex: 0 0 120px;           /* 固定寬度，大約能容納6個中文字 */
+  text-align: center;        /* 文字置中 */
+  padding: 4px 6px;
+  border: 1px solid var(--neon);
+  border-radius: 6px;
+  background: rgba(98,200,255,0.05); /* 淡淡背景，可依需求調 */
+  box-sizing: border-box;
+}
+
+/* 經驗條 */
+.xpBar{
+  flex: 1;                   /* 經驗條佔滿剩下空間 */
+  height: 14px;
+  background: #233;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.xpFill{
+  height: 100%;
+  background: var(--neon);
+}
