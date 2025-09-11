@@ -220,16 +220,29 @@ body{ font-size: var(--fs); }
   color: var(--gold);
 }
      
-/* 手機直立模式 → 自動縮放整體介面 */
-@media screen and (max-width: 480px) and (orientation: portrait) {
-  body {
-    transform: scale(0.9);       /* 整體縮小到 90% */
-    transform-origin: top center;/* 從上方置中縮放，避免偏移 */
-  }
+     /* === 手機畫面修正：避免字數變多時畫面超出 === */
 
-  /* 避免縮放後出現白邊 → 強制寬度固定在螢幕 */
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
+/* 1. 不要限制高度，讓內容能撐開並上下滑動 */
+html, body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-x: hidden;   /* 禁止橫向超出 */
+  overflow-y: auto;     /* 當內容變多，整頁能上下滑動 */
+  max-width: 100vw;     /* 保證不超過螢幕寬度 */
+}
+
+/* 2. 外層容器要能自適應內容 */
+.stage, .screen {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;     /* 預設隱藏橫向 */
+  overflow-y: auto;     /* 當內容增加，允許垂直滾動 */
+}
+
+/* 3. 框框裡文字要能自動換行，不撐破 */
+.panel, #problemArea, #problemBox, .problemBody, .msg, .chip, .taskname {
+  white-space: normal;       /* 自動換行 */
+  word-wrap: break-word;     /* 舊版瀏覽器 */
+  overflow-wrap: break-word; /* 現代瀏覽器 */
+  max-width: 100%;
 }
