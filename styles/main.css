@@ -241,3 +241,8 @@ body{ font-size: var(--fs); }
     overflow-wrap: break-word; /* 現代瀏覽器 */
   }
 }
+     
+/* 禁止縮放 /*
+input, select, textarea {
+  font-size: 16px !important;
+}
