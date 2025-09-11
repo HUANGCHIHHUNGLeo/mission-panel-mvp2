@@ -217,6 +217,10 @@ body{ font-size: var(--fs); }
   height: 100%;
   background: var(--neon);
 }
+     .stat{
+  display: grid;
+  grid-template-columns: 200px 60px minmax(0,1fr) 50px;
+}
 
 /* 百分比 */
 .stat .pct{
