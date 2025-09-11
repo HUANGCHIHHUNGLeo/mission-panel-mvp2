@@ -221,14 +221,19 @@ body{ font-size: var(--fs); }
 }
 
 /* 1. 保證整體不會超過螢幕寬度 */
-html, body, .stage, .screen {
-  max-width: 100vw;     /* 螢幕最寬就是100% */
-  overflow-x: hidden;   /* 禁止左右捲動 */
+html, body {
+  height: auto;          /* 不要強制100%高度 */
+  min-height: 100%;      /* 至少佔滿螢幕 */
+  overflow-y: auto;      /* 當內容變多，整頁能上下滑動 */
+  overflow-x: hidden;    /* 禁止左右滑動 */
 }
 
 /* 2. 文字超出時自動換行 */
-.panel, .msg, .problemBody, .chip, .stat, #notifMain, #problemBox {
+#problemArea, #problemBox, .problemBody {
   white-space: normal;       /* 允許換行 */
-  word-wrap: break-word;     /* 舊版瀏覽器 */
-  overflow-wrap: break-word; /* 現代瀏覽器 */
+  word-wrap: break-word;
+  overflow-wrap: break-word; /* 超長字分行 */
+  height: auto;              /* 高度隨內容增長 */
+  max-width: 100%;           /* 不超過螢幕 */
 }
+
