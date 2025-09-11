@@ -229,11 +229,19 @@ body{ font-size: var(--fs); }
     overflow-y: auto;      /* 當內容變多，允許上下捲動 */
   }
 
-  .stage, .screen {
-    width: 100%;
-    max-width: 100%;       /* 🚀 保證內容塞在螢幕裡 */
-    overflow: visible;     /* 不要裁切，讓內容顯示完整 */
-  }
+.stage {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;   /* 不裁切內容 */
+  padding: 0;          /* 🚀 移除邊距，貼緊螢幕 */
+}
+
+.screen {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  border-radius: 14px; /* ✅ 保留圓角 */
+}
 
   .panel, #problemArea, #problemBox, .problemBody, .msg {
     white-space: normal;       /* 自動換行 */
