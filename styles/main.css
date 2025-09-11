@@ -249,3 +249,14 @@ body{ font-size: var(--fs); }
 #problemBody textarea {
   font-size: 16px;
 }
+
+/* 任務面板（.cols 裡的 panel）滿版修正 */
+.cols {
+  gap: 0;              /* 🚀 移除左右間距 */
+}
+
+.cols > .panel {
+  width: 100%;         /* 讓 panel 填滿 */
+  margin: 0;           /* 移除外邊距 */
+  border-radius: 0;    /* 如果要四角貼邊 */
+}
