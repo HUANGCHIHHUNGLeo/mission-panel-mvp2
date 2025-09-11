@@ -145,7 +145,7 @@ body{ font-size: var(--fs); }
 
 #problemArea .problemBox{
   padding: 14px;           /* 內容留白更多 */
-  min-height: 220px;       /* 高度加大（原本 120px）*/
+  min-height: 260px;       /* 高度加大（原本 120px）*/
   border-width: 2px;       /* 內框也加粗一點（視覺更大）*/
 }
 
