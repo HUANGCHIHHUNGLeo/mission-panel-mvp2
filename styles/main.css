@@ -171,5 +171,5 @@ body{ font-size: var(--fs); }
 
 /* 如果你之前把整體欄位比例放大了，這裡也一起調回來 */
 @media (min-width: 921px){
-  .cols{ grid-template-columns: 1.2fr .8fr; } /* 左主欄略窄，右欄略寬 */
+  .cols{ grid-template-columns: 1.3fr .9fr; } /* 左主欄略窄，右欄略寬 */
 }
