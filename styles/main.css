@@ -163,12 +163,13 @@ body{ font-size: var(--fs); }
   bottom: 14px;
 }
 
-/*（可選）桌機版讓左側欄更寬，作題區看起來更大 */
-@media (min-width: 500px){
-  .cols{ grid-template-columns: 1.4fr .6fr; } /* 原 1.2fr / .8fr */
+/* 作題區：限制最大寬度並置中 */
+#problemArea{
+  max-width: 680px;      /* ← 想更窄就 640/600 */
+  margin-inline: auto;
 }
 
-/*（可選）手機上也想更高一些 */
-@media (max-width: 480px){
-  #problemArea .problemBox{ min-height: 180px; }
+/* 如果你之前把整體欄位比例放大了，這裡也一起調回來 */
+@media (min-width: 921px){
+  .cols{ grid-template-columns: 1.2fr .8fr; } /* 左主欄略窄，右欄略寬 */
 }
