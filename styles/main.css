@@ -176,30 +176,23 @@ body{ font-size: var(--fs); }
 
 /* 技能列四欄：名稱框 / 等級 / 經驗條 / 百分比 */
 .stat{
-  display: grid;
-  grid-template-columns: 200px 60px 1fr 50px;
-  /* 200px = 名稱框寬度（6字+空間）
-     60px  = 等級框 (Lv1)
-     1fr   = 經驗條，會自動填滿
-     50px  = 百分比數字 */
+  display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 10px;
 }
 
 /* 名稱框 */
 .stat .name{
-  display: inline-block;
-  width: 100%;
+  width: 200px;  /* 固定寬度，自己決定 */
   text-align: center;
   padding: 4px 6px;
   border: 1px solid var(--gold);
   border-radius: 6px;
-  box-sizing: border-box;
 }
 
 /* 等級框 */
 .stat .level{
+  width: 60px;   /* 固定 */
   text-align: center;
   font-weight: bold;
   color: var(--gold);
@@ -207,7 +200,7 @@ body{ font-size: var(--fs); }
 
 /* 經驗條 */
 .stat .bar{
-  width: 100%;
+  flex: 1;       /* 🚀 吃掉剩下所有空間 → 不管名稱多寬都一樣長 */
   height: 14px;
   background: #233;
   border-radius: 6px;
@@ -217,15 +210,10 @@ body{ font-size: var(--fs); }
   height: 100%;
   background: var(--neon);
 }
-     .stat{
-  display: grid;
-  grid-template-columns: 200px 60px minmax(0,1fr) 50px;
-}
 
 /* 百分比 */
 .stat .pct{
+  width: 50px;   /* 固定 */
   text-align: right;
-  font-size: 14px;
-  font-weight: bold;
   color: var(--gold);
 }
