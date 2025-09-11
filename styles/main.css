@@ -174,17 +174,18 @@ body{ font-size: var(--fs); }
   .cols{ grid-template-columns: 1.3fr .9fr; } /* 左主欄略窄，右欄略寬 */
 }
 
-/* 技能列四欄：名稱框 / 等級 / 經驗條 / 百分比 */
+/* 技能列：Grid 四欄 */
 .stat{
-  display: flex;
+  display: grid;
+  grid-template-columns: 200px 60px minmax(0,1fr) 50px;
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
+  font-size: 14px;
 }
 
-/* 技能名稱框 */
+/* 名稱框 */
 .stat .name{
-  width: 200px;
   text-align: center;
   padding: 4px 6px;
   border: 1px solid var(--gold);
@@ -194,7 +195,6 @@ body{ font-size: var(--fs); }
 
 /* 等級框 */
 .stat .level{
-  width: 60px;
   text-align: center;
   font-weight: bold;
   color: var(--gold);
@@ -202,7 +202,7 @@ body{ font-size: var(--fs); }
 
 /* 經驗條 */
 .stat .bar{
-  flex: 1;                 /* 🚀 自動吃滿剩餘空間 */
+  width: 100%;       /* 🚀 撐滿 grid cell */
   height: 14px;
   background: #233;
   border-radius: 6px;
@@ -213,11 +213,9 @@ body{ font-size: var(--fs); }
   background: var(--neon);
 }
 
-/* 百分比數字 */
+/* 百分比 */
 .stat .pct{
-  width: 50px;
   text-align: right;
-  font-size: 14px;
   font-weight: bold;
   color: var(--gold);
 }
