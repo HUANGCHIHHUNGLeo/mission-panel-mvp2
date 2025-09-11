@@ -179,28 +179,30 @@ body{ font-size: var(--fs); }
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 8px;
 }
 
-/* 名稱框 */
+/* 名稱框固定寬 */
 .stat .name{
-  width: 200px;  /* 固定寬度，自己決定 */
+  width: 180px;   /* 固定，能容納6字 */
   text-align: center;
   padding: 4px 6px;
   border: 1px solid var(--gold);
   border-radius: 6px;
+  box-sizing: border-box;
 }
 
-/* 等級框 */
+/* 等級框固定寬 */
 .stat .level{
-  width: 60px;   /* 固定 */
+  width: 60px;    /* 固定 */
   text-align: center;
   font-weight: bold;
   color: var(--gold);
 }
 
-/* 經驗條 */
+/* 經驗條填滿剩餘空間 */
 .stat .bar{
-  flex: 1;       /* 🚀 吃掉剩下所有空間 → 不管名稱多寬都一樣長 */
+  flex: 1;
   height: 14px;
   background: #233;
   border-radius: 6px;
@@ -211,9 +213,10 @@ body{ font-size: var(--fs); }
   background: var(--neon);
 }
 
-/* 百分比 */
+/* 百分比固定寬 */
 .stat .pct{
-  width: 50px;   /* 固定 */
+  width: 50px;
   text-align: right;
   color: var(--gold);
+  font-weight: bold;
 }
