@@ -220,21 +220,15 @@ body{ font-size: var(--fs); }
   color: var(--gold);
 }
 
-/* 手機介面 */
-html, body {
-  max-width: 100vw;     /* 🚫 最寬就是螢幕寬度 */
-  overflow-x: hidden;   /* 禁止橫向捲動 */
-}
-     
-.panel, .msg, .problemBody, .chip, .stat, .name, .level {
-  white-space: normal;    /* 允許換行 */
-  word-wrap: break-word;  /* 單字太長時斷開換行 */
-  overflow-wrap: break-word; /* 現代瀏覽器用這個 */
+/* 1. 保證整體不會超過螢幕寬度 */
+html, body, .stage, .screen {
+  max-width: 100vw;     /* 螢幕最寬就是100% */
+  overflow-x: hidden;   /* 禁止左右捲動 */
 }
 
-     .panel {
-  box-sizing: border-box;
-  word-break: break-all;  /* 最兇狠，遇到長字硬拆 */
+/* 2. 文字超出時自動換行 */
+.panel, .msg, .problemBody, .chip, .stat, #notifMain, #problemBox {
+  white-space: normal;       /* 允許換行 */
+  word-wrap: break-word;     /* 舊版瀏覽器 */
+  overflow-wrap: break-word; /* 現代瀏覽器 */
 }
-
-
