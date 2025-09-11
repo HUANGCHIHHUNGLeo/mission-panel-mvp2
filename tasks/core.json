@@ -1,4 +1,3 @@
-[
 {
   "id": "g1",
   "title": {
@@ -7,27 +6,16 @@
   },
   "skill": "geometry",
   "xp": 11,
-  "q": [
-    {
-      "type": "fill",
-      "prompt": {
-        "zh": "數線上有A、B、C個點，若A在C的左邊相距8個單位長，B在C的左邊相距5個單位長，則A在B的 __ 邊",
-        "en": "On a number line, there are points A, B, and C. If A is 8 units to the left of C, and B is 5 units to the left of C, then A is on the __ side of B"
-      },
-      "answer": "左"
-    },
-    {
-      "type": "fill",
-      "prompt": {
-        "zh": "A在B的左邊相距 __ 個單位長",
-        "en": "A is __ units away from B on the left"
-      },
-      "answer": "3"
+  "q": {
+    "type": "fill",
+    "prompt": {
+      "zh": "數線上有A、B、C個點，若A在C的左邊相距8個單位長，B在C的左邊相距5個單位長，則A在B的 __ 邊相距 __ 個單位長。",
+      "en": "On a number line, there are points A, B, and C. If A is 8 units to the left of C, and B is 5 units to the left of C, then A is on the __ side of B and __ units away."
     }
-  ],
+  },
+  "answer": ["左", "3"],
   "explain": {
     "zh": "因為A比C更左邊（8單位），B比C左邊5單位，所以A比B多左邊3單位 → 答案是「左、3」。",
     "en": "A is 8 units left of C, while B is 5 units left of C. Therefore, A is 3 units further left than B → Answer: Left, 3."
   }
-},
-]
+}
