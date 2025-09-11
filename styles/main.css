@@ -174,20 +174,20 @@ body{ font-size: var(--fs); }
   .cols{ grid-template-columns: 1.3fr .9fr; } /* 左主欄略窄，右欄略寬 */
 }
 
-/* 技能列四欄版：名稱框 / 等級 / 經驗條 / 百分比 */
+/* 技能列四欄：名稱框 / 等級 / 經驗條 / 百分比 */
 .stat{
   display: grid;
   grid-template-columns: 200px 60px 1fr 50px;
-  /* 200px = 技能名稱框寬度（跟第二張圖差不多）
-     60px  = 等級框
-     1fr   = 經驗條（自動填滿中間）
+  /* 200px = 名稱框寬度（6字+空間）
+     60px  = 等級框 (Lv1)
+     1fr   = 經驗條，會自動填滿
      50px  = 百分比數字 */
   align-items: center;
   gap: 12px;
   margin-bottom: 10px;
 }
 
-/* 技能名稱框 */
+/* 名稱框 */
 .stat .name{
   display: inline-block;
   width: 100%;
@@ -207,7 +207,7 @@ body{ font-size: var(--fs); }
 
 /* 經驗條 */
 .stat .bar{
-  width: 100%;         /* 撐滿 grid cell → 跟第二張一樣長 */
+  width: 100%;
   height: 14px;
   background: #233;
   border-radius: 6px;
