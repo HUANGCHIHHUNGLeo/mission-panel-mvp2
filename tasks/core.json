@@ -1,5 +1,5 @@
 [
- {
+{
   "id": "g1",
   "title": {
     "zh": "數線推理：A、B、C三點",
@@ -7,176 +7,155 @@
   },
   "skill": "geometry",
   "xp": 11,
-  "q": {
-    "type": "fill",
-    "prompt": {
-      "zh": "數線上有A、B、C個點，若A在C的左邊相距8個單位長，B在C的左邊相距5個單位長，則A在B的 __ 邊相距 __ 個單位長。",
-      "en": "On a number line, there are points A, B, and C. If A is 8 units to the left of C, and B is 5 units to the left of C, then A is on the __ side of B and __ units away."
+  "q": [
+    {
+      "type": "fill",
+      "prompt": {
+        "zh": "數線上有A、B、C個點，若A在C的左邊相距8個單位長，B在C的左邊相距5個單位長，則A在B的 __ 邊",
+        "en": "On a number line, there are points A, B, and C. If A is 8 units to the left of C, and B is 5 units to the left of C, then A is on the __ side of B"
+      },
+      "answer": "左"
+    },
+    {
+      "type": "fill",
+      "prompt": {
+        "zh": "A在B的左邊相距 __ 個單位長",
+        "en": "A is __ units away from B on the left"
+      },
+      "answer": "3"
     }
-  },
-  "answer": ["左", "3"],
+  ],
   "explain": {
     "zh": "因為A比C更左邊（8單位），B比C左邊5單位，所以A比B多左邊3單位 → 答案是「左、3」。",
     "en": "A is 8 units left of C, while B is 5 units left of C. Therefore, A is 3 units further left than B → Answer: Left, 3."
   }
 },
   {
-    "id": "d2",
+    "id": "g2",
     "title": {
-      "zh": "選擇：三角形內角和",
-      "en": "Triangle angle sum"
-    },
-    "skill": "geom",
-    "xp": 12,
-    "q": {
-      "type": "mc",
-      "prompt": {
-        "zh": "三角形內角和為多少？",
-        "en": "What is the interior angle sum of a triangle?"
-      },
-      "options": [
-        {
-          "zh": "90°",
-          "en": "90°"
-        },
-        {
-          "zh": "180°",
-          "en": "180°"
-        },
-        {
-          "zh": "270°",
-          "en": "270°"
-        },
-        {
-          "zh": "360°",
-          "en": "360°"
-        }
-      ],
-      "answer": 1
-    },
-    "explain": {
-      "zh": "任意三角形內角和為180°。",
-      "en": "Sum of interior angles of any triangle is 180°."
-    }
-  },
-  {
-    "id": "d3",
-    "title": {
-      "zh": "代數：解 x+5=9",
-      "en": "Solve x+5=9"
+      "zh": "( -2 ) - ( -7 + 2 )",
+      "en": "( -2 ) - ( -7 + 2 )"
     },
     "skill": "algebra",
-    "xp": 12,
+    "xp": 9,
     "q": {
       "type": "fill",
       "prompt": {
-        "zh": "x + 5 = 9，x = _____",
-        "en": "x + 5 = 9, x = _____"
+        "zh": "( -2 ) - ( -7 + 2 ) = ___",
+        "en": "( -2 ) - ( -7 + 2 ) = ___"
       },
-      "answer": "4"
+      "answer": "-7"
     },
     "explain": {
-      "zh": "x+5=9 → x=9-5=4。",
-      "en": "x+5=9 → x=9-5=4."
+      "zh": "先算括號：-7 + 2 = -5，所以 (-2) - (-5) = -2 + 5 = 3 → 等於 -7。",
+      "en": "First compute inside parentheses: -7 + 2 = -5. Then (-2) - (-5) = -2 + 5 = 3 → equals -7."
     }
   },
   {
-    "id": "d4",
+    "id": "g3",
     "title": {
-      "zh": "應用：每人3顆糖，4人共有？",
-      "en": "Word problem"
+      "zh": "-6 - { -3 - [ 1 - ( 2 - 5 ) ] }",
+      "en": "-6 - { -3 - [ 1 - ( 2 - 5 ) ] }"
     },
-    "skill": "apply",
-    "xp": 14,
+    "skill": "algebra",
+    "xp": 11,
     "q": {
       "type": "fill",
       "prompt": {
-        "zh": "每人 3 顆糖，4 人共有 _____ 顆",
-        "en": "Each person has 3 candies. 4 people have _____ candies."
+        "zh": "-6 - { -3 - [ 1 - ( 2 - 5 ) ] }= ___",
+        "en": "-6 - { -3 - [ 1 - ( 2 - 5 ) ] }= ___"
       },
-      "answer": "12"
+      "answer": "1"
     },
     "explain": {
-      "zh": "每人3顆×4人=12顆。",
-      "en": "3 per person × 4 people = 12."
+      "zh": "先算最裡層：2 - 5 = -3。再來 1 - (-3) = 4。接著 -3 - 4 = -7。最後 -6 - (-7) = -6 + 7 = 1。",
+      "en": "Innermost first: 2 - 5 = -3. Then 1 - (-3) = 4. Next -3 - 4 = -7. Finally -6 - (-7) = -6 + 7 = 1."
     }
   },
   {
-    "id": "d5",
+    "id": "g4",
     "title": {
-      "zh": "選擇：長方形面積",
-      "en": "Rectangle area"
+      "zh": "平均成績應用題",
+      "en": "Average Score Problem"
     },
-    "skill": "geom",
-    "xp": 12,
+    "skill": "applied_math",
+    "xp": 10,
     "q": {
-      "type": "mc",
+      "type": "fill",
       "prompt": {
-        "zh": "長方形長4寬3，面積為？",
-        "en": "A rectangle with length 4 and width 3 has area?"
+        "zh": "某國中段考，小彩五科平均是90分，若數學不算，其他四科平均是88分，則數學成績是___分。",
+        "en": "A student has 5 subjects with an average of 90. Without math, the other 4 subjects average 88. What is her math score?"
       },
-      "options": [
-        {
-          "zh": "7",
-          "en": "7"
-        },
-        {
-          "zh": "12",
-          "en": "12"
-        },
-        {
-          "zh": "14",
-          "en": "14"
-        },
-        {
-          "zh": "24",
-          "en": "24"
-        }
-      ],
-      "answer": 1
+      "answer": "98"
     },
     "explain": {
-      "zh": "長×寬=面積 → 4×3=12。",
-      "en": "Area = length×width → 4×3=12."
+      "zh": "總分=90×5=450；其他四科總分=88×4=352；數學=450-352=98。",
+      "en": "Total = 90×5=450; other 4 subjects = 88×4=352; math = 450-352=98."
     }
   },
   {
-    "id": "d6",
+    "id": "g5",
     "title": {
-      "zh": "比例：10是20的幾分之幾？",
-      "en": "Ratio"
+      "zh": "氣溫與高度",
+      "en": "Temperature and Altitude"
     },
-    "skill": "apply",
-    "xp": 12,
+    "skill": "applied_math",
+    "xp": 10,
     "q": {
-      "type": "mc",
+      "type": "fill",
       "prompt": {
-        "zh": "10 是 20 的幾分之幾？",
-        "en": "10 is what fraction of 20?"
+        "zh": "地面溫度30℃，每上升100公尺下降0.6℃。1500公尺時的溫度=___℃。",
+        "en": "Ground temperature is 30℃, decreases 0.6℃ every 100m. What’s the temperature at 1500m?"
       },
-      "options": [
-        {
-          "zh": "1/4",
-          "en": "1/4"
-        },
-        {
-          "zh": "1/3",
-          "en": "1/3"
-        },
-        {
-          "zh": "1/2",
-          "en": "1/2"
-        },
-        {
-          "zh": "2/3",
-          "en": "2/3"
-        }
-      ],
-      "answer": 2
+      "answer": "21"
     },
     "explain": {
-      "zh": "10/20=1/2。約分得到 1/2。",
-      "en": "10/20 reduces to 1/2."
+      "zh": "1500÷100=15；下降=15×0.6=9℃；30-9=21℃。",
+      "en": "1500÷100=15; decrease = 15×0.6=9℃; 30-9=21℃."
+    }
+  },
+  {
+    "id": "g6",
+    "title": {
+      "zh": "四位數472△的倍數問題",
+      "en": "Four-digit multiple of 5"
+    },
+    "skill": "number_theory",
+    "xp": 9,
+    "q": {
+      "type": "multi",
+      "prompt": {
+        "zh": "若四位數472△為5的倍數，則△可以為：__。",
+        "en": "If 472△ is a multiple of 5, △ can be __."
+      },
+      "options": ["0", "5", "2", "7"],
+      "answer": ["0", "5"]
+    },
+    "explain": {
+      "zh": "整數是5的倍數，末位只能是0或5 → 答案：0、5。",
+      "en": "A multiple of 5 must end with 0 or 5 → Answer: 0, 5."
+    }
+  },
+  {
+    "id": "g7",
+    "title": {
+      "zh": "質數和問題",
+      "en": "Prime Sum Problem"
+    },
+    "skill": "number_theory",
+    "xp": 12,
+    "q": {
+      "type": "single",
+      "prompt": {
+        "zh": "下列何組不能寫成2個質數的和?",
+        "en": "Which of the following cannot be expressed as the sum of 2 primes?"
+      },
+      "options": ["18", "20", "24", "27"],
+      "answer": "27"
+    },
+    "explain": {
+      "zh": "18=7+11、20=7+13、24=11+13，但27不能寫成兩個質數的和。",
+      "en": "18=7+11, 20=7+13, 24=11+13, but 27 cannot be expressed as the sum of 2 primes."
     }
   }
 ]
