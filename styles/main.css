@@ -244,5 +244,6 @@ body{ font-size: var(--fs); }
      
 /* 禁止縮放 /*
 input, select, textarea {
-  font-size: 16px !important;
+  font-size: 17px;   /* 🚀 避免 iOS 自動放大 */
 }
+
