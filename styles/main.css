@@ -136,3 +136,39 @@ body{ font-size: var(--fs); }
 @media (max-width: 480px){
   :root{ --fs: 15px; --fs-sm: 14px; --fs-lg: 17px; }
 }
+
+/* === Bigger Problem Area (作題區放大) === */
+#problemArea{
+  padding: 12px;           /* 外框更厚實 */
+  border-width: 2px;       /* 外框線條更有存在感 */
+}
+
+#problemArea .problemBox{
+  padding: 14px;           /* 內容留白更多 */
+  min-height: 220px;       /* 高度加大（原本 120px）*/
+  border-width: 2px;       /* 內框也加粗一點（視覺更大）*/
+}
+
+#problemArea .problemBox h3{
+  font-size: 15px;         /* 題目字體稍微放大 */
+}
+
+#problemArea .problemBody{
+  font-size: 14px;         /* 內文更好讀 */
+  line-height: 1.6;
+}
+
+#problemArea .problemActions{
+  right: 14px;             /* 跟著 padding 往外移一點 */
+  bottom: 14px;
+}
+
+/*（可選）桌機版讓左側欄更寬，作題區看起來更大 */
+@media (min-width: 921px){
+  .cols{ grid-template-columns: 1.4fr .6fr; } /* 原 1.2fr / .8fr */
+}
+
+/*（可選）手機上也想更高一些 */
+@media (max-width: 480px){
+  #problemArea .problemBox{ min-height: 180px; }
+}
