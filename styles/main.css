@@ -166,7 +166,7 @@ body{ font-size: var(--fs); }
 /* 作題區：限制最大寬度並置中 */
 #problemArea{
   max-width: 680px;      /* ← 想更窄就 640/600 */
-  margin-inline: auto;
+  margin-left: auto;
 }
 
 /* 如果你之前把整體欄位比例放大了，這裡也一起調回來 */
