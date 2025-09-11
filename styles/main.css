@@ -164,7 +164,7 @@ body{ font-size: var(--fs); }
 }
 
 /*（可選）桌機版讓左側欄更寬，作題區看起來更大 */
-@media (min-width: 880px){
+@media (min-width: 500px){
   .cols{ grid-template-columns: 1.4fr .6fr; } /* 原 1.2fr / .8fr */
 }
 
