@@ -150,7 +150,7 @@ body{ font-size: var(--fs); }
 }
 
 #problemArea .problemBox h3{
-  font-size: 15px;         /* 題目字體稍微放大 */
+  font-size: 18px;         /* 題目字體稍微放大 */
 }
 
 #problemArea .problemBody{
