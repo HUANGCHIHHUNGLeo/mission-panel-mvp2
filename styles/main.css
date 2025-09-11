@@ -219,3 +219,22 @@ body{ font-size: var(--fs); }
   font-weight: bold;
   color: var(--gold);
 }
+
+/* 手機介面 */
+html, body {
+  max-width: 100vw;     /* 🚫 最寬就是螢幕寬度 */
+  overflow-x: hidden;   /* 禁止橫向捲動 */
+}
+     
+.panel, .msg, .problemBody, .chip, .stat, .name, .level {
+  white-space: normal;    /* 允許換行 */
+  word-wrap: break-word;  /* 單字太長時斷開換行 */
+  overflow-wrap: break-word; /* 現代瀏覽器用這個 */
+}
+
+     .panel {
+  box-sizing: border-box;
+  word-break: break-all;  /* 最兇狠，遇到長字硬拆 */
+}
+
+
