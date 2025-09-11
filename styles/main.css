@@ -165,11 +165,11 @@ body{ font-size: var(--fs); }
 
 /* 作題區：限制最大寬度並置中 */
 #problemArea{
-  max-width: 720px;      /* ← 想更窄就 640/600 */
+  max-width: 800px;      /* ← 想更窄就 640/600 */
   margin-right: auto;
 }
 
 /* 如果你之前把整體欄位比例放大了，這裡也一起調回來 */
-@media (min-width: 921px){
+@media (min-width: 999px){
   .cols{ grid-template-columns: 1.3fr .9fr; } /* 左主欄略窄，右欄略寬 */
 }
