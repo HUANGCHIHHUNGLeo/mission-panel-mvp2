@@ -233,7 +233,7 @@ body{ font-size: var(--fs); }
   width: 100%;
   max-width: 100%;
   overflow: visible;   /* 不裁切內容 */
-  padding: 0;          /* 🚀 移除邊距，貼緊螢幕 */
+  padding: -4;          /* 🚀 移除邊距，貼緊螢幕 */
 }
 
 .screen {
