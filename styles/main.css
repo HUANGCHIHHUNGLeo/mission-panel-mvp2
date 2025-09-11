@@ -182,9 +182,9 @@ body{ font-size: var(--fs); }
   margin-bottom: 8px;
 }
 
-/* 名稱框固定寬 */
+/* 技能名稱框 */
 .stat .name{
-  width: 180px;   /* 固定，能容納6字 */
+  width: 200px;
   text-align: center;
   padding: 4px 6px;
   border: 1px solid var(--gold);
@@ -192,17 +192,17 @@ body{ font-size: var(--fs); }
   box-sizing: border-box;
 }
 
-/* 等級框固定寬 */
+/* 等級框 */
 .stat .level{
-  width: 60px;    /* 固定 */
+  width: 60px;
   text-align: center;
   font-weight: bold;
   color: var(--gold);
 }
 
-/* 經驗條填滿剩餘空間 */
+/* 經驗條 */
 .stat .bar{
-  flex: 1;
+  flex: 1;                 /* 🚀 自動吃滿剩餘空間 */
   height: 14px;
   background: #233;
   border-radius: 6px;
@@ -213,10 +213,11 @@ body{ font-size: var(--fs); }
   background: var(--neon);
 }
 
-/* 百分比固定寬 */
+/* 百分比數字 */
 .stat .pct{
   width: 50px;
   text-align: right;
-  color: var(--gold);
+  font-size: 14px;
   font-weight: bold;
+  color: var(--gold);
 }
