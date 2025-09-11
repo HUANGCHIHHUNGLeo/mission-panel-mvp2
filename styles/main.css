@@ -230,10 +230,10 @@ body{ font-size: var(--fs); }
   }
 
 .stage, .screen {
-  width: 100vw !important;   /* 🚀 用螢幕寬度，不是父層寬度 */
-  max-width: 100vw !important;
-  margin: 0 !important;      /* 移除外距 */
-  padding: 0 !important;     /* 移除內距 */
+  width: 100vw ;   /* 🚀 用螢幕寬度，不是父層寬度 */
+  max-width: 100vw ;
+  margin: 0 ;      /* 移除外距 */
+  padding: 0 ;     /* 移除內距 */
   border-radius: 0;          /* 如果你要四角完全貼邊 → 設 0 */
 }
 
