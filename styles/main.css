@@ -185,7 +185,7 @@ body{ font-size: var(--fs); }
 
 /* 技能名稱框框 */
 .skillName{
-  flex: 0 0 120px;           /* 固定寬度，大約能容納6個中文字 */
+  flex: 0 0 140px;           /* 固定寬度，大約能容納6個中文字 */
   text-align: center;        /* 文字置中 */
   padding: 4px 6px;
   border: 1px solid var(--neon);
