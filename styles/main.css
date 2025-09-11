@@ -250,9 +250,10 @@ body{ font-size: var(--fs); }
   font-size: 16px;
 }
 
-/* 讓個人資料的雷達圖在手機上自適應 */
-#radar {
-  width: 100% !important;   /* 🚀 撐滿父容器，但不超過螢幕 */
-  height: auto !important;  /* 高度隨比例縮放 */
-  max-width: 100%;          /* 保險：不會超出框框 */
+@media (max-width: 480px) {
+  #radar {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+  }
 }
