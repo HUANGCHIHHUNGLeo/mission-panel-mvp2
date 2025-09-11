@@ -154,8 +154,8 @@ body{ font-size: var(--fs); }
 }
 
 #problemArea .problemBody{
-  font-size: 14px;         /* 內文更好讀 */
-  line-height: 1.6;
+  font-size: 16px;         /* 內文更好讀 */
+  line-height: 1.7;
 }
 
 #problemArea .problemActions{
@@ -164,7 +164,7 @@ body{ font-size: var(--fs); }
 }
 
 /*（可選）桌機版讓左側欄更寬，作題區看起來更大 */
-@media (min-width: 921px){
+@media (min-width: 880px){
   .cols{ grid-template-columns: 1.4fr .6fr; } /* 原 1.2fr / .8fr */
 }
 
