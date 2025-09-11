@@ -220,20 +220,24 @@ body{ font-size: var(--fs); }
   color: var(--gold);
 }
      
-  /* 手機直立模式 → 自動縮小整體畫面，確保完整呈現 */
+/* 手機直立模式修正：完整顯示，不切字 */
 @media screen and (max-width: 480px) and (orientation: portrait) {
   html, body {
     width: 100%;
-    height: auto;
-    overflow: hidden;           /* 不要出現捲軸 */
-  }
-
-  body {
-    transform: scale(0.6);     /* 🚀 縮小到 85%（可調整 0.9 / 0.8） */
-    transform-origin: top center; /* 從上方置中縮放 */
+    max-width: 100vw;      /* 不允許超過螢幕 */
+    overflow-x: hidden;    /* 禁止橫向捲動 */
+    overflow-y: auto;      /* 當內容變多，允許上下捲動 */
   }
 
   .stage, .screen {
-    width: 90%;                /* 補回縮放後空白，避免切字 */
+    width: 100%;
+    max-width: 100%;       /* 🚀 保證內容塞在螢幕裡 */
+    overflow: visible;     /* 不要裁切，讓內容顯示完整 */
+  }
+
+  .panel, #problemArea, #problemBox, .problemBody, .msg {
+    white-space: normal;       /* 自動換行 */
+    word-wrap: break-word;     /* 舊版支援 */
+    overflow-wrap: break-word; /* 現代瀏覽器 */
   }
 }
