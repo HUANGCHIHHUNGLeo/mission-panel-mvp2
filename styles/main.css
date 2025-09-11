@@ -219,10 +219,6 @@ body{ font-size: var(--fs); }
   font-weight: bold;
   color: var(--gold);
 }
-    /* 輸入框字體大小（避免 iOS 放大）/*
-     input, select, textarea {
-  font-size: 16px !important;  /* 避免 iOS 自動放大 */
-}
 
 /* 手機直立模式修正：完整顯示，不切字 */
 @media screen and (max-width: 480px) and (orientation: portrait) {
