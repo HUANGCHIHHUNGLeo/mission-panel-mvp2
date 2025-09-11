@@ -177,7 +177,7 @@ body{ font-size: var(--fs); }
 /* 技能列：Grid 四欄 */
 .stat{
   display: grid;
-  grid-template-columns: 200px 60px 3fr) 50px;
+  grid-template-columns: 200px 60px 3fr 50px;
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
