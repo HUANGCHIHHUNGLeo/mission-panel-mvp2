@@ -219,21 +219,17 @@ body{ font-size: var(--fs); }
   font-weight: bold;
   color: var(--gold);
 }
+     
+/* 手機直立模式 → 自動縮放整體介面 */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  body {
+    transform: scale(0.9);       /* 整體縮小到 90% */
+    transform-origin: top center;/* 從上方置中縮放，避免偏移 */
+  }
 
-/* 1. 保證整體不會超過螢幕寬度 */
-html, body {
-  height: auto;          /* 不要強制100%高度 */
-  min-height: 100%;      /* 至少佔滿螢幕 */
-  overflow-y: auto;      /* 當內容變多，整頁能上下滑動 */
-  overflow-x: hidden;    /* 禁止左右滑動 */
+  /* 避免縮放後出現白邊 → 強制寬度固定在螢幕 */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
 }
-
-/* 2. 文字超出時自動換行 */
-#problemArea, #problemBox, .problemBody {
-  white-space: normal;       /* 允許換行 */
-  word-wrap: break-word;
-  overflow-wrap: break-word; /* 超長字分行 */
-  height: auto;              /* 高度隨內容增長 */
-  max-width: 100%;           /* 不超過螢幕 */
-}
-
